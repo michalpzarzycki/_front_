@@ -1,8 +1,8 @@
 import fetch from 'isomorphic-fetch'
-import { publicRuntimeConfig } from 'next/config'
+import  getConfig from 'next/config'
 import cookie from 'js-cookie'
 import { Router } from 'next/router'
-const { API_DEVELOPMENT } = publicRuntimeConfig
+const { publicRuntimeConfig } = getConfig()
 
 export const handleResponse = response => {
     if (response.status === 401) {
@@ -19,7 +19,7 @@ export const handleResponse = response => {
 }
 
 export const signup = (user) => {
-    return fetch(`${API_DEVELOPMENT}/api/signup`, {
+    return fetch(`${publicRuntimeConfig.API_DEVELOPMENT}/api/signup`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -36,7 +36,7 @@ export const signup = (user) => {
 }
 
 export const signin = (user) => {
-    return fetch(`${API_DEVELOPMENT}/api/signin`, {
+    return fetch(`${publicRuntimeConfig.API_DEVELOPMENT}/api/signin`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -57,7 +57,7 @@ export const signout = (next) => {
     removeLocalStorage('user')
     next()
 
-    return fetch(`${API_DEVELOPMENT}/api/signout`, {
+    return fetch(`${publicRuntimeConfig.API_DEVELOPMENT}/api/signout`, {
         method: 'GET'
     }).then(responese => {
         console.log("signout success")
