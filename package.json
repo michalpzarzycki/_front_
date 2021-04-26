@@ -26,5 +26,8 @@
   },
   "devDependencies": {
     "webpack": "^4.44.2"
+  },
+  "engines": {
+    "node": "15.12.0"
   }
 }
