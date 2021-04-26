@@ -2,11 +2,9 @@ import getConfig from 'next/config';
 
 const { env } = getConfig()
 
-export const API = env.PRODUCTION ? 'https://seoblog.com' : 'http://localhost:8000';
-export const APP_NAME = env.APP_NAME;
+export const API = 'http://localhost:8000';
+export const APP_NAME = 'OLY DUDES';
 
-export const DOMAIN = env.PRODUCTION ? 
-                      env.DOMAIN_PRODUCTION :
-                      env.DOMAIN_DEVELOPMENT
+export const DOMAIN = 'https://seoblog.com' 
 
-export const DISCUSS_SHORTNAME = env.DISCUSS_SHORTNAME
+export const DISCUSS_SHORTNAME = 'olydudes'

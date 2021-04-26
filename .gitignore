@@ -1,3 +1,6 @@
 .next
 node_modules/
-next.config.js
+next.config.jsnode_modules/
+.next/
+node_modules/
+.next/
