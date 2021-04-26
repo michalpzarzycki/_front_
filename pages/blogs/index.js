@@ -4,7 +4,7 @@ import {withRouter} from 'next/router'
 import Layout from '../../components/Layout'
 import {useState} from 'react'
 import {listBlogsWithCategoriesAndTags} from '../../actions/blog'
-import {API, DOMAIN, APP_NAME } from '../../config'
+import getConfig from 'next/config'
 import { Card } from 'reactstrap'
 
 const Blogs = ({ blogs, categories, tags, totalBlogs, router, blogsLimit, blogsSkip}) => {
@@ -25,6 +25,7 @@ const loadMore = () => {
         }
     })
 }
+const {publicRuntimeConfig } = getConfig()
 const loadMoreButton = () => {
     return (
         size > 0 && size >= limit && (<button className="btn btn-primay" onClick={loadMore}>Load more</button>)
@@ -32,14 +33,14 @@ const loadMoreButton = () => {
 }
     const head = () => (
         <Head>
-            <title>OlyDudes | {APP_NAME}</title>
+            <title>OlyDudes | {publicRuntimeConfig.APP_NAME}</title>
             <meta name="description" content="OlyDudes blog, weightlifting, crossfit, running"/>
-            <link rel="cannonical" href={`${DOMAIN}${router.pathname}`}/>
-            <meta property="og:title" content={`Latest blogs | ${APP_NAME}`}/>
+            <link rel="cannonical" href={`${publicRuntimeConfig.DOMAIN}${router.pathname}`}/>
+            <meta property="og:title" content={`Latest blogs | ${publicRuntimeConfig.APP_NAME}`}/>
             <meta property="og:description" content="OlyDudes blog, weightlifting, crossfit, running"/>
             <meta property="og:type" content="website"/>
-            <meta property="og:url" content={`${DOMAIN}${router.pathname}`}/>
-            <meta property="og:site_name" content={`${APP_NAME}`}/>
+            <meta property="og:url" content={`${publicRuntimeConfig.DOMAIN}${router.pathname}`}/>
+            <meta property="og:site_name" content={`${publicRuntimeConfig.APP_NAME}`}/>
 
             <meta property="og:image" content="/static/images/seoblog.js"/>
             <meta property="og:image:secure_url" content="/static/images/seoblog.js"/>

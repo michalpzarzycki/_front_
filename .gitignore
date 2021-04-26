@@ -4,3 +4,4 @@ next.config.jsnode_modules/
 .next/
 node_modules/
 .next/
+.env

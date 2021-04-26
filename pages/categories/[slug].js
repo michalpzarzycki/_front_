@@ -3,11 +3,13 @@ import Link from 'next/link'
 import {withRouter} from 'next/router'
 import Layout from '../../components/Layout'
 import { singleCategory} from '../../actions/category'
-import {API, DOMAIN, APP_NAME } from '../../config'
+import getConfig from 'next/config'
 import { Card } from 'reactstrap'
 import renderHTML from 'react-render-html'
 
 const Category = ({ category, blogs }) => {
+    const {publicRuntimeConfig} = getConfig().publicRuntimeConfig
+
     return(
         <>
             <Layout>

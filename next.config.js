@@ -1,13 +1,13 @@
 
 
 module.exports = {
-    env: {
-        APP_NAME: 'SEOBLOG',
-        API_DEVELOPMENT: 'http://localhost:8000/api',
-        PRODUCTION: false,
-        DOMAIN_DEVELOPMENT: 'http://localhost:3000',
-        DOMAIN_PRODUCTION: 'https://olydudes.com',
-        DISCUSS_SHORTNAME: 'olydudes'
+    publicRuntimeConfig: {
+        APP_NAME: process.env.APP_NAME,
+        API_DEVELOPMENT: process.env.API_DEVELOPMENT,
+        PRODUCTION: process.env.PRODUCTION,
+        DOMAIN_DEVELOPMENT: process.env.DOMAIN_DEVELOPMENT,
+        DOMAIN_PRODUCTION: process.env.DOMAIN_PRODUCTION,
+        DISCUSS_SHORTNAME: process.env.DISCUSS_SHORTNAME
 
     }
 }

@@ -1,10 +1,12 @@
-import getConfig from 'next/config';
+// import getConfig from 'next/config';
 
-const { env } = getConfig()
+// const { publicRuntimeConfig } = getConfig()
 
-export const API = 'http://localhost:8000';
-export const APP_NAME = 'OLY DUDES';
+// export const API = publicRuntimeConfig.PRODUCTION ? 'https://vast-atoll-61125.herokuapp.com/' : 'http://localhost:8000';
+// export const APP_NAME = publicRuntimeConfig.APP_NAME;
 
-export const DOMAIN = 'https://seoblog.com' 
+// export const DOMAIN = publicRuntimeConfig.PRODUCTION ? 
+//                       publicRuntimeConfig.DOMAIN_PRODUCTION :
+//                       publicRuntimeConfig.DOMAIN_DEVELOPMENT
 
-export const DISCUSS_SHORTNAME = 'olydudes'
+// export const DISCUSS_SHORTNAME = publicRuntimeConfig.DISCUSS_SHORTNAME

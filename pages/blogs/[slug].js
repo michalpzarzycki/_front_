@@ -4,15 +4,18 @@ import {withRouter} from 'next/router'
 import Layout from '../../components/Layout'
 import {useEffect, useState} from 'react'
 import {singleBlog, listRelated} from '../../actions/blog'
-import {API, DOMAIN, APP_NAME } from '../../config'
+import getConfig from 'next/config'
 import { Card } from 'reactstrap'
 import renderHTML from 'react-render-html'
 import DiscussThread from '../../components/DiscussThread'
+import { publicRuntimeConfig } from '../../next.config'
 const SingleBlog = ({blog, router}) => {
     const [related, setRelated] = useState([])
     useEffect(()=>{
         loadRelated()
     }, [])
+   const{ publicRuntimeConfig } = getConfig()
+   
     const loadRelated = () => {
         listRelated({blog}).then(data => {
             if(data.error) {
@@ -58,15 +61,15 @@ const SingleBlog = ({blog, router}) => {
         <Head>
             <title>OlyDudes | {APP_NAME}</title>
             <meta name="description" content={blog.mdesc}/>
-            <link rel="cannonical" href={`${DOMAIN}/blogs/${router.pathname}`}/>
-            <meta property="og:title" content={`Latest blogs | ${APP_NAME}`}/>
+            <link rel="cannonical" href={`${publicRuntimeConfig.DOMAIN}/blogs/${router.pathname}`}/>
+            <meta property="og:title" content={`Latest blogs | ${publicRuntimeConfig.APP_NAME}`}/>
             <meta property="og:description" content="OlyDudes blog, weightlifting, crossfit, running"/>
             <meta property="og:type" content="website"/>
-            <meta property="og:url" content={`${DOMAIN}/blog/${router.pathname}`}/>
-            <meta property="og:site_name" content={`${APP_NAME}`}/>
+            <meta property="og:url" content={`${publicRuntimeConfig.DOMAIN}/blog/${router.pathname}`}/>
+            <meta property="og:site_name" content={`${publicRuntimeConfig.APP_NAME}`}/>
 
-            <meta property="og:image" content={`${API}/api/blogs/photo/${blog.slug}`}/>
-            <meta property="og:image:secure_url" content={`${API}/api/blogs/photo/${blog.slug}`}/>
+            <meta property="og:image" content={`${publicRuntimeConfig.API}/api/blogs/photo/${blog.slug}`}/>
+            <meta property="og:image:secure_url" content={`${publicRuntimeConfig.API}/api/blogs/photo/${blog.slug}`}/>
             <meta property="og:site_name:type" content="image/jpg"/>
     
 
