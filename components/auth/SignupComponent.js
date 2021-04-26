@@ -15,7 +15,7 @@ const SignUpComponent = () => {
         isAuth() && Router.push('/')
     }, [])
 const signUpForm = () => (
-    <form onSubmit={handleSubmit}>
+    <form method="POST" onSubmit={handleSubmit}>
     <div className="form-group">
         <input value={name} name="name" type="text" onChange={handleChange} className="form-control" placeholder="Your name" autoComplete="off"/>
     </div>
