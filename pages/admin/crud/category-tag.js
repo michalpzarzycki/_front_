@@ -1,13 +1,13 @@
-import Layout from '../../../components/Layout'
-import Admin from '../../../components/auth/Admin'
-import Category from '../../../components/crud/Category'
-import Link from 'next/link'
-import Tag from '../../../components/crud/Tag'
+// import Layout from '../../../components/Layout'
+// import Admin from '../../../components/auth/Admin'
+// import Category from '../../../components/crud/Category'
+// import Link from 'next/link'
+// import Tag from '../../../components/crud/Tag'
 
 const CategoryTag = () => {
-    return (
-        <Layout>
-            <Admin>
+    return (<></>
+        // <Layout>
+            {/* <Admin>
                 <div className="row">
                     <div className="col-md-12 pt-5 pb-5">
                         <h2>Manage Categories ans Tags</h2>
@@ -22,7 +22,7 @@ const CategoryTag = () => {
                     </div>
                 </div>
             </Admin>
-        </Layout>
+        </Layout> */}
     )
 }
 
